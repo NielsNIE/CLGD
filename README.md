@@ -1,65 +1,50 @@
-# YOLO项目
+# CLGDD - 玉米叶病害检测系统
 
-这是一个基于YOLOv8的目标检测项目，支持多人远程协作开发。
+基于 YOLOv8 的玉米叶片病害检测系统，用于识别以下病害类型：
+- 灰斑病 (Gray Leaf Spot)
+- 北方叶枯病 (Northern Leaf Blight)
+- 南方叶枯病 (Southern Leaf Blight)
+
+## 项目结构
+```
+CLGDD/
+├── CAT-3/              # 数据集目录
+├── ultralytics/        # YOLOv8 核心代码
+├── quick_train.py      # 快速训练脚本
+├── requirements.txt    # 项目依赖
+└── README.md          # 项目说明
+```
 
 ## 环境要求
-
-- CUDA 11.8+
-- Docker
-- Git
+- Python 3.8+
+- PyTorch 2.0+
+- 其他依赖见 requirements.txt
 
 ## 快速开始
 
-1. 克隆项目
+1. 安装依赖：
 ```bash
-git clone <your-repository-url>
-cd <repository-name>
+pip install -r requirements.txt
 ```
 
-2. 构建Docker镜像
+2. 运行训练：
 ```bash
-docker build -t yolo-project .
+python quick_train.py
 ```
 
-3. 运行Docker容器
-```bash
-docker run --gpus all -it --rm -v $(pwd):/workspace yolo-project
-```
+## 版本说明
 
-## 项目结构
+### v0.1.0 (2024-03-12)
+- 初始版本
+- 实现基础的模型训练功能
+- 支持三种玉米叶片病害的检测
+- 使用 YOLOv8-nano 模型进行快速训练测试
 
-```
-.
-├── Dockerfile          # Docker配置文件
-├── requirements.txt    # Python依赖
-├── ultralytics/       # YOLOv8核心代码
-├── datasets/          # 数据集目录
-└── models/            # 模型目录
-```
-
-## 开发指南
-
-1. 创建新分支进行开发
-```bash
-git checkout -b feature/your-feature-name
-```
-
-2. 提交代码
-```bash
-git add .
-git commit -m "your commit message"
-git push origin feature/your-feature-name
-```
-
-3. 创建Pull Request进行代码审查
-
-## 注意事项
-
-- 请确保在开发新功能时创建新的分支
-- 提交代码前请进行充分测试
-- 遵循项目的代码规范
-- 保持代码的可读性和可维护性
+## 待办事项
+- [ ] 优化模型性能
+- [ ] 添加验证集评估指标
+- [ ] 实现模型导出功能
+- [ ] 添加 Web 界面
 
 ## 许可证
-
-本项目基于YOLOv8开源协议 
+本项目采用 MIT 许可证。详见 LICENSE 文件。 

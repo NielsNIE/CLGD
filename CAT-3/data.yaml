@@ -1,0 +1,15 @@
+names:
+- gray-leaf-spot
+- northern-leaf-blight
+- southern-leaf-blight
+nc: 3
+roboflow:
+  license: CC BY 4.0
+  project: cat-vqyem
+  url: https://universe.roboflow.com/clgd2/cat-vqyem/dataset/3
+  version: 3
+  workspace: clgd2
+path: /Users/niexiangpeng/Desktop/CLGDD/CAT-3
+train: train/images
+val: valid/images
+test: test/images
